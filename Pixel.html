@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 导入字体 -->
+
+    <title>Lu's Avatar Generator</title>
+
+    <style type="text/css">
+
+        @font-face {
+            font-family: "PixelifySans";
+            src: url("Font/PixelifySans.ttf");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Dream";
+            src: url("Font/YouSheYuFeiTeJianKangTi.ttf");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+    </style>
+
+
+    <style>
+         a{
+            text-decoration: none;
+        }
+
+        li{
+            list-style-type:none;
+        }
+
+        .Button1{
+            border-radius: 10px;
+            height: 50px;
+            border-top: 0px;
+            background-color:rgb(245, 245, 239);
+            margin-left: 70px;
+            margin-top: 20px;
+            border: solid rgb(229, 228, 221);
+            float:left;
+            text-align: center;
+            line-height: 50px;
+            border-style: none;
+        }
+
+        .Button2{
+            border-radius: 20px;
+            height: 45px;
+            background-color:rgb(245, 245, 239);
+            width: 180px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+            list-style-type:none;
+            text-align: center;
+            line-height: 45px;
+            border-style: none;
+        }
+
+        button:hover{
+            background-color: rgb(232, 232, 232);
+        }
+
+        .Button3{
+            margin-left: 10px;
+        }
+
+
+        .PixelfontTitle1{
+            color: rgb(49, 49, 49);
+            font-size: 40px;
+            font-family: "PixelifySans";
+            float: left;
+        }
+
+        .PixelfontTitle2{
+            color: rgb(49, 49, 49);
+            font-size: 30px;
+            font-family: "PixelifySans","Dream";
+            
+        }
+
+        .PixelfontTitle3{
+            color: rgb(76, 75, 75);
+            font-size: 20px;
+            font-family: "PixelifySans","Dream";
+            
+        }
+
+        /* .Box1{
+            border-radius: 10px;
+            height: 50px;
+            border-top: 0px;
+            background-color:rgb(245, 245, 239);
+            margin-left: 70px;
+            margin-top: 20px;
+            border: solid rgb(229, 228, 221);
+            float:left;
+            text-align: center;
+            line-height: 50px;
+        } */
+
+        /* .Box2{
+            border-radius: 20px;
+            height: 45px;
+            background-color:rgb(245, 245, 239);
+            width: 180px;
+            margin-top: 10px;
+            margin-left: 0px;
+            border: solid rgb(229, 228, 221);
+            list-style-type:none;
+            text-align: center;
+            line-height: 45px;
+        } */
+
+        .Box3{
+            position:absolute;
+            margin-left: 290px;
+            margin-top: 10px;
+            height:430px;
+            width:300px;
+            overflow:scroll;
+            background:#EEEEEE;
+            display: none;
+        }
+
+        .Box4{
+            position:absolute;
+            margin-left: 630px;
+            margin-top: 10px;
+            height:430px;
+            width:430px;
+            border: solid, gray;
+            background: #EEEEEE;
+        }
+
+        .Box5{
+            float: right;
+            margin-top: 368px;
+        }
+
+        .Box6{
+            float: right;
+            margin-top: 450px;
+        }
+
+        .Canvas{
+            position:absolute;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<br>
+    
+    <!-- logo+风格菜单 -->
+    <div style= "margin-left: 50px; width: 100%; height: 80px">
+
+        <div class="PixelfontTitle1"> Lu's Avatar </br> Generator </div>
+        <a href="Pixel.html"> <button class="Button1 PixelfontTitle2">像素 pixel</button></a>
+        <a href="Waterpaint.html"><button class="Button1 PixelfontTitle2">水彩 waterpaint</button></a>
+        <a href="Clay.html"> <button class="Button1 PixelfontTitle2">粘土 clay</button></a>
+        <!--回homepage，直接删这个-->
+        <a href="index.html"><button class="Button1 PixelfontTitle3">Back to homepage</button></a>
+
+    </div>
+
+    </br>
+    
+    <div>
+        <!-- 步骤菜单 -->
+        <div style="margin-top: 0px; float:left;">
+            <ul>
+                <li><button class="Button2 PixelfontTitle3" type="button" onclick="showDiv('faceDiv')">脸型 face</button></li>
+                <li><button class="Button2 PixelfontTitle3" type="button" onclick="showDiv('eyesDiv')">眼睛 eyes</button></li>
+                <li><button class="Button2 PixelfontTitle3" type="button" onclick="showDiv('eyebrowDiv')">眉毛 eyebrow</button></li>
+                <li><button class="Button2 PixelfontTitle3" type="button" onclick="showDiv('noseDiv')">鼻子 nose</button></li>
+                <li><button class="Button2 PixelfontTitle3" type="button" onclick="showDiv('mouthDiv')">嘴形 mouth</button></li>
+                <li><button class="Button2 PixelfontTitle3" type="button" onclick="showDiv('blushDiv')">腮红 blush</button></li>
+                <li><button class="Button2 PixelfontTitle3" type="button" onclick="showDiv('hairDiv')">发型 hair style</button></li>
+                <li><button class="Button2 PixelfontTitle3" type="button" onclick="showDiv('accessoryDiv')">饰品 accessories</button></li>
+                <li><button class="Button2 PixelfontTitle3" type="button" onclick="showDiv('clothDiv')">服装 cloth</button></li>
+             
+            </ul>
+        </div>
+
+        <!-- 选择框 -->
+            <!-- face -->
+        <div class="Box3" id="faceDiv">
+            <button class = "Button3" onclick="createDiv('face1')")>
+                <img src="images/face1.PNG" width=65px>
+            </button>
+
+            <button class = "Button3" onclick="createDiv('face2')")>
+                <img src="images/face2.PNG" width=65px>
+            </button>
+
+            <button class = "Button3" onclick="createDiv('face3')")>
+                <img src="images/face3.PNG" width=65px>
+            </button>
+
+        </div>
+
+            <!-- eyes -->
+        <div class="Box3" id="eyesDiv" >
+            <button onclick="createDiv('eyes1')")>
+                <img src="images/eyes1.PNG" width=65px>
+            </button>
+        </div>
+
+        <!-- eyebrow -->
+        <div class="Box3" id="eyebrowDiv" >
+            <button onclick="")>
+                <img src="#" width=65px>
+            </button>
+        </div>
+
+            <!-- nose -->
+        <div class="Box3" id="noseDiv">
+            <button  onclick="createDiv('nose1')")>
+                <img src="images/nose1.PNG" width=65px>
+            </button>
+        </div>
+
+            <!-- mouth -->
+        <div class="Box3" id="mouthDiv">
+            <button onclick="createDiv('mouth1')")>
+                <img src="images/mouth1.PNG" width=65px>
+            </button>
+        </div>
+
+            <!-- blush -->
+        <div class="Box3" id="blushDiv">
+            <button onclick="createDiv('blush1')")>
+                <img src="images/blush1.PNG" width=65px>
+            </button>
+        </div>
+
+            <!-- hair -->
+        <div class="Box3" id="hairDiv">
+            <button onclick="createDiv('hair1')")>
+                <img src="images/hair1.PNG" width=65px>
+            </button>
+        </div>
+
+            <!-- accessory -->
+        <div class="Box3" id="accessoryDiv">
+            <button onclick="")>
+                <img src="#" width=65px>
+            </button>
+        </div>
+
+            <!-- cloth -->
+        <div class="Box3" id="clothDiv">
+            <button onclick="createDiv('cloth1')")>
+                <img src="images/cloth1.PNG" width=65px>
+            </button>
+        </div>
+
+        <!-- 头像画布 -->
+        <div class="Box4" id="canvasDiv">
+            
+        </div>
+
+        <!-- 可动小人 -->
+        <div class = "Box5">
+            <img src="images/sample.gif" width=300px>
+        </div>
+
+        <!-- 可动小人对话 -->
+        <div class = "Box6">
+            <img src="images/dialogue.GIF" width=200px>
+        </div>
+
+    </div>
+    
+ 
+    <script type="text/javascript">
+        let a = "faceDiv"
+        document.getElementById(a).style.display = "block";
+        let showDiv=(str)=>{
+            document.getElementById(str).style.display ="block";
+            if (a != str) {
+                document.getElementById(a).style.display = "none";
+                document.getElementById(a).style.display ="none";
+            }
+            
+            a = str;
+        }
+
+        // function createDiv(){
+        //     let targetId = document.getElementById("canvasDiv");
+        //     var img = document.createElement("img");
+        //     img.width = "400";
+        //     img.style.marginLeft = "15";
+        //     img.src = "images/face1.PNG";
+        //     targetId.appendChild(img);
+        // }
+        
+
+        // 创建画布
+        const arrayCount = new Array();
+
+        function createDiv(str){
+            let targetId = document.getElementById("canvasDiv");
+            var strName = str.match(/^[a-z|A-Z]+/gi).toString();
+            var strNumber = str.match((/\d+$/gi)).toString();
+            // console.log(strNumber);
+            var findresult = arrayCount.find(({ name }) => name === strName); //用对象实现 现在的不对 
+            //包含对象的array 如果有 则替换 如果没有 则add
+            if(findresult === undefined){
+                const a = arrayCount.push({name: strName, num: strNumber});
+            } else {
+                let currId = document.getElementById(findresult.name+findresult.num); //str还是现在的所以不对 用包含对象的array实现
+                // console.log(findresult.name + findresult.num);
+                targetId.removeChild(currId);
+                var reindex = arrayCount.findIndex(({ name }) => name === strName);
+                arrayCount.splice(reindex, 1, {name: strName, num: strNumber});
+                //console.log(arrayCount);
+            }
+            
+            var zindex = 0;
+            switch(str.match(/^[a-z|A-Z]+/gi).toString()){
+                case "face":
+                    zindex = 1;
+                    break;
+                case "eyes":
+                    zindex = 5;
+                    break;
+                case "eyebrow":
+                    zindex = 7
+                case "nose":
+                    zindex = 3;
+                    break;
+                case "mouth":
+                    zindex = 4;
+                    break;
+                case "blush":
+                    zindex = 2;
+                    break;
+                case "hair":
+                    zindex = 6;
+                    break;
+                case "accessory":
+                    zindex = 8;
+                    break;
+                case "cloth":
+                    zindex = 9;
+                    break;
+            }
+
+            
+            var div = document.createElement("div");
+            var img = document.createElement("img");
+            targetId.appendChild(div);
+            div.id = str;
+            div.classList = "Canvas";
+            img.width = "400";
+            img.src = "images/"+str+".PNG";
+            div.appendChild(img);
+            var style = document.createAttribute("style");
+            div.setAttributeNode(style);
+            div.style.marginLeft = "15px";
+            div.style.marginTop = "15px";
+            div.style.zIndex = zindex;
+        }
+    </script>
+</body>
+
+</html>
