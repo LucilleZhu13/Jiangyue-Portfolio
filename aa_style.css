@@ -12,6 +12,12 @@
     font-style: normal;
 }
 
+h4{
+    color: rgb(49, 49, 49);
+    font-size: 20px;
+    font-family: "Dream";
+}
+
 .title1{
     color: rgb(49, 49, 49);
     font-size: 40px;
@@ -33,6 +39,12 @@ a{
     font-size: 23px;
     font-style: italic;
     color: rgb(0, 95, 136);
+}
+
+.a2{
+    text-decoration: none;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 li{
@@ -92,3 +104,24 @@ button:hover{
     float: right;
     word-wrap: break-word;
 }
+
+.img-group {
+    position: relative;
+    display: inline-block;
+  }
+          
+  .img-tip {
+    position: absolute;
+    bottom: 0;
+    background: #333;
+    color: #fff;
+    opacity: 0.6;
+    display: none;
+  }
+          
+  .img-group:hover .img-tip {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: Courier, monospace;
+  }
